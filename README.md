@@ -15,12 +15,12 @@ This repository encompasses the main program for G4Beacon2, including usage inst
 - [9. Citation](#9-citation)
 
 
-## <img src="./pictures/beacon.ico"/> Update(2024/9/29)
+ <img src="./pictures/beacon.ico"/> ## Update(2024/9/29)
 
 Previously, we introduced the beta version of [G4Beacon](https://github.com/Bocabbage/G4Beacon). After maintenance and improvements, we are delighted to introduce G4Beacon2, a genome-wide, cell-specific G4 prediction method based on multi-level ensemble learning, DNABERT2 encoding, and z-score normalization.
 
 
-## <img src="./pictures/beacon.ico"/> 1. Introduction
+ <img src="./pictures/beacon.ico"/> ## 1. Introduction
 
 G-quadruplexes (G4) are prevalent non-B DNA structures playing crucial biological roles in cells. Although experimental technologies for G4 identification in vitro and in vivo are advancing, computational prediction methods are increasingly preferred for their efficiency, convenience, and cost-effectiveness. However, existing tools primarily perform in vitro G4 predictions that lack cell-specific information and are often non-genome-wide, with high-performance genome-wide in vivo G4 prediction models still lacking. We present G4Beacon2, a genome-wide cell-specific G4 prediction model based on multi-level ensemble learning. G4Beacon2 leveraged DNABERT2 to capture semantic information from DNA sequences and normalized chromatin accessibility data using z-scores and established a three-level ensemble framework to achieve accurate in vivo G4 predictions across the genome. Therefore, we demonstrated the model's robust performance in both intra-cell-line and cross-cell-line tests and validated its high generalizability in cross-species predictions. Moreover, the fusion model, integrating high-quality data from multiple species and cell lines, exhibited high stability and performance. In summary, G4Beacon2 presents a novel solution for genome-wide in vivo G4 prediction by integrating multi-species and cell line data, offering a user-friendly and advanced prediction tool for researchers.
 
