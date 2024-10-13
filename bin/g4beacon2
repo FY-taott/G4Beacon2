@@ -1,0 +1,56 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Author: Tao Tiantong, Zhang Zhuofan
+# Update date: 2024/10/10
+import sys
+from G4Beacon2.seqFeatureConstruct import seqFeatureConstruct_main
+from G4Beacon2.atacFeatureConstruct import atacFeatureConstruct_main
+from G4Beacon2.getValidatedG4s import getValidatedG4s_main
+from G4Beacon2.trainingsetConstruct import trainingsetConstruct_main
+from G4Beacon2.trainOwnData import trainOwnData_main
+
+def main(args):
+    description = r"""
+        [g4beacon2] is an genome-wide cell specific validated G4(vG4) prediction tool.
+        g4beacon2 takes seq(embedded)+atac(zscored) feature inputs.
+        This software can be used to construct the feature, train on your own data or
+        predict genome-wide vG4s. We provide the following sub-commands:
+        
+        - seqFeatureConstruct   [Takes BED-format file as input to construct sequence-feature]
+        - atacFeatureConstruct  [Takes BigWig file as input to construct atac-feature]
+        - getValidatedG4s       [Predicts in vivo vG4s]
+        - trainingsetConstruct  [Takes your constructed-feature data and create a balanced training-set]
+        - trainOwnData          [Trains GBDT model with your own data]
+        
+        For more details, run:
+        g4beacon2 {seqFeatureConstruct, atacFeatureConstruct, getValidatedG4s, trainingsetConstruct, trainOwnData} --help
+        More information: https://github.com/FY-taott/G4Beacon2
+    """
+    if len(args) == 1 and (args[0] == "--help" or args[0] == "-h"):
+        print(description)
+#start:This component currently serves no immediate purpose but is reserved for future interface updates.
+    elif args[0] == 'predict':
+        predict_main(args[1:])
+    elif args[0] == 'train':
+        train_main(args[1:])
+#end:This component currently serves no immediate purpose but is reserved for future interface updates.
+    elif args[0] == 'seqFeatureConstruct':
+        seqFeatureConstruct_main(args[1:])
+    elif args[0] == 'atacFeatureConstruct':
+        atacFeatureConstruct_main(args[1:])
+    elif args[0] == 'getValidatedG4s':
+        getValidatedG4s_main(args[1:])
+    elif args[0] == 'trainingsetConstruct':
+        trainingsetConstruct_main(args[1:])
+    elif args[0] == 'trainOwnData':
+        trainOwnData_main(args[1:])
+    else:
+        print(f"Error: sub-commend/tool not found [{args[0]}]")
+
+
+if __name__ == '__main__':
+    args = sys.argv
+    if len(args) == 1:
+        args = args.append("--help")
+    args = sys.argv[1:]
+    main(args)
