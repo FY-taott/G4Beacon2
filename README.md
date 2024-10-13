@@ -15,19 +15,19 @@ This repository encompasses the main program for G4Beacon2, including usage inst
 - [9. Citation](#9-citation)
 
 
- <img src="./pictures/beacon.ico"/> ## Update(2024/9/29)
+##  <img src="./pictures/beacon.ico"/> Update(2024/9/29)
 
 Previously, we introduced the beta version of [G4Beacon](https://github.com/Bocabbage/G4Beacon). After maintenance and improvements, we are delighted to introduce G4Beacon2, a genome-wide, cell-specific G4 prediction method based on multi-level ensemble learning, DNABERT2 encoding, and z-score normalization.
 
 
- <img src="./pictures/beacon.ico"/> ## 1. Introduction
+## 1. Introduction
 
 G-quadruplexes (G4) are prevalent non-B DNA structures playing crucial biological roles in cells. Although experimental technologies for G4 identification in vitro and in vivo are advancing, computational prediction methods are increasingly preferred for their efficiency, convenience, and cost-effectiveness. However, existing tools primarily perform in vitro G4 predictions that lack cell-specific information and are often non-genome-wide, with high-performance genome-wide in vivo G4 prediction models still lacking. We present G4Beacon2, a genome-wide cell-specific G4 prediction model based on multi-level ensemble learning. G4Beacon2 leveraged DNABERT2 to capture semantic information from DNA sequences and normalized chromatin accessibility data using z-scores and established a three-level ensemble framework to achieve accurate in vivo G4 predictions across the genome. Therefore, we demonstrated the model's robust performance in both intra-cell-line and cross-cell-line tests and validated its high generalizability in cross-species predictions. Moreover, the fusion model, integrating high-quality data from multiple species and cell lines, exhibited high stability and performance. In summary, G4Beacon2 presents a novel solution for genome-wide in vivo G4 prediction by integrating multi-species and cell line data, offering a user-friendly and advanced prediction tool for researchers.
 
 <img src="./pictures/figure1.png" alt="fig1" style="zoom:80%;" />
 
 
-## <img src="./pictures/beacon.ico"/> 2. Requirements and installation
+## 2. Requirements and installation
 ### 2.1 Requirements for G4Beacon2
 If you wish to run the main functions of G4Beacon2 in default mode, you may need to meet the following configuration requirements:
 - Ubuntu 20.04.4 LTS
@@ -51,7 +51,7 @@ $ python setup.py install
 ```
 If installation using git commands is unsuccessful, you can try downloading the code as a zip file, extract it locally, and then proceed with the installation.
 
-## <img src="./pictures/beacon.ico"/> 3. Quick Start
+## 3. Quick Start
 G4Beacon2 provides a pre-trained default prediction model based on multi-level ensemble learning. You can directly use this framework with the following code. In this section, you will need to prepare *sequence data* and *chromatin accessibility data* as inputs. For the former, you can optionally use our provided default pre-embedded sequences (The human reference genome (hg19) and the mouse reference genome (mm10) are supported). For the latter, you can generate data by combining genome BED files provided by us with ATAC-seq p-value files.
    
     # Bed: The original BED file is required, and files for human and mouse can be found in G4Beacon2/data/GenomeBins/ .
@@ -60,7 +60,7 @@ G4Beacon2 provides a pre-trained default prediction model based on multi-level e
 
 If you wish to predict on a new genome, encode using DNABERT2 as described in the ['5. Preparation before training'](#5-preparation-before-training) section. 
 
-## <img src="./pictures/beacon.ico"/> 4. Sub-commands
+## 4. Sub-commands
 A complete list of commands can be found in the help section.
 ```bash
 g4beacon2 --help
@@ -80,7 +80,7 @@ g4beacon2 --help
         More information: https://github.com/FY-taott/G4Beacon2
 ```
 
-## <img src="./pictures/beacon.ico"/> 5. Preparation before training
+## 5. Preparation before training
 The purpose of data preparation is to integrate multiple existing datasets to create bins for training or prediction. For subsequent training or predicting, the features obtained by the model must be input in a valid bins format; thus, this step is essential.
 
 ### 5.1 Data preparation
@@ -345,7 +345,7 @@ For ATAC feature extraction:
 start with the normalization code, followed by the g4beacon2 command.
 ```
 
-## <img src="./pictures/beacon.ico"/> 6. Training
+## 6. Training
 
 So far, the four files required for training have been generated, which are:
 
@@ -402,7 +402,7 @@ for i in {00..04}; do
 done
 ```
 
-## <img src="./pictures/beacon.ico"/> 7. Prediction
+## 7. Prediction
 ### 7.1 Level 1: base score
 ```bash
 for i in {00..04}; do
@@ -460,7 +460,7 @@ paste H9onK562_CellScore.bed HepG2onK562_CellScore.bed WT26onK562_CellScore.bed 
     > $output_folder/FusionScore_K562.bed
 ```
 
-## <img src="./pictures/beacon.ico"/> 8. Test data
+## 8. Test data
 
 We have provided raw data available for testing in ./G4Beacon/data , which allows the users to test our prediction tool in a short amount of time.
 
@@ -482,5 +482,5 @@ g4beacon2 getValidatedG4s \
        -o HepG2Train_K562Test/ES00_plus_prediction.bed
 ```
 
-## <img src="./pictures/beacon.ico"/> 9. Citation
+## 9. Citation
 Coming Soon.
