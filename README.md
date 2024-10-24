@@ -46,7 +46,7 @@ You can install G4Beacon2 using the following commands:
 $ conda create -n G4Beacon2
 $ conda activate G4Beacon2
 
-$ git clone #https://github.com/FY-taott/G4Beacon2.git
+$ git clone https://github.com/FY-taott/G4Beacon2.git
 $ cd G4Beacon2/
 $ python setup.py install
 ```
