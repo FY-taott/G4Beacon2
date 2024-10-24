@@ -49,6 +49,8 @@ $ conda activate G4Beacon2
 $ git clone https://github.com/FY-taott/G4Beacon2.git
 $ cd G4Beacon2/
 $ python setup.py install
+$ python setup.py install --user # when permission denied
+$ pip install -r requirements.txt
 ```
 If installation using git commands is unsuccessful, you can try downloading the code as a zip file, extract it locally, and then proceed with the installation.
 
@@ -462,21 +464,15 @@ paste H9onK562_CellScore.bed HepG2onK562_CellScore.bed WT26onK562_CellScore.bed 
 We have provided raw data available for testing in ./G4Beacon/data , which allows the users to test our prediction tool in a short amount of time.
 
 ```bash
+# The test code can be found in G4Beacon2/data/test.
 mkdir HepG2Train_K562Test
 
 g4beacon2 getValidatedG4s \
-       --seqCSV minus_seq.csv \
-       --atacCSV K562_minus_atac.csv \
-       --originBED minus_origin.bed \
+       --seqCSV minus_seq_1k.csv \
+       --atacCSV K562_minus_atac_1k.csv \
+       --originBED minus_origin_1k.bed \
        --model zscoreDNABERT2_HepG2_ES00_0517model.checkpoint.joblib \
-       -o HepG2Train_K562Test/ES00_minus_prediction.bed
-
-g4beacon2 getValidatedG4s \
-       --seqCSV plus_seq.csv \
-       --atacCSV K562_plus_atac.csv \
-       --originBED plus_origin.bed \
-       --model zscoreDNABERT2_HepG2_ES00_0517model.checkpoint.joblib \
-       -o HepG2Train_K562Test/ES00_plus_prediction.bed
+       -o HepG2Train_K562Test/ES00_minus_prediction_1k.bed
 ```
 
 ## 9. Citation
