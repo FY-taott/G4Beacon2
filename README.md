@@ -402,7 +402,7 @@ done
 ```
 
 ## 7. Prediction
-### 7.1 Level 1: base score
+### 7.1 Level 1: base model score
 ```bash
 for i in {00..04}; do
   g4beacon2 getValidatedG4s \
@@ -426,7 +426,7 @@ for i in {00..04}; do
 done
 ```
 
-### 7.2 level 2: cell score
+### 7.2 level 2: cell model score
 ```bash
 # $4,$8,$12,$16,$20 are the columns containing the prediction scores.
 # If the BED file has additional information,
