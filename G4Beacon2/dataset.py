@@ -1,7 +1,7 @@
 #! /usr/bin python
 # -*- coding: utf-8 -*-
-# Update date: 2024/10/10
-# Author: Tao Tiantong, Zhang Zhuofan
+# Author: Tiantong Tao, Zhuofan Zhang
+# Update date: 2024/11/14
 
 import numpy as np
 import pandas as pd

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Author: Tao Tiantong, Zhang Zhuofan
-# Update date: 2024/10/10
+# Author: Tiantong Tao, Zhuofan Zhang
+# Update date: 2024/11/14
 
 import random
 import argparse

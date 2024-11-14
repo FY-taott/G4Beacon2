@@ -1,8 +1,8 @@
 #! usr/bin python
 # -*- coding: utf-8 -*-
 # Description: provide shell-env support and other util-functions
-# Author: Tao Tiantong, Zhang Zhuofan
-# Update date: 2024/10/10
+# Author: Tiantong Tao, Zhuofan Zhang
+# Update date: 2024/11/14
 
 import os
 import stat

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Author: Tao Tiantong, Zhang Zhuofan
-# Update date: 2024/10/10
+# Author: Tiantong Tao, Zhuofan Zhang
+# Update date: 2024/11/14
 import sys
 from G4Beacon2.seqFeatureConstruct import seqFeatureConstruct_main
 from G4Beacon2.atacFeatureConstruct import atacFeatureConstruct_main
@@ -11,7 +11,7 @@ from G4Beacon2.trainOwnData import trainOwnData_main
 
 def main(args):
     description = r"""
-        [g4beacon2] is an genome-wide cell specific validated G4(vG4) prediction tool.
+        [g4beacon2] is a genome-wide cell specific validated G4(vG4) prediction tool.
         g4beacon2 takes seq(embedded)+atac(zscored) feature inputs.
         This software can be used to construct the feature, train on your own data or
         predict genome-wide vG4s. We provide the following sub-commands:
