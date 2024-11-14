@@ -5,7 +5,7 @@ This repository encompasses the main program for [G4Beacon2](https://github.com/
 ## Contents
 
 - [1. Introduction](#1-introduction)
-- [2. Requirements and installation](#2-requirement-and-installation)
+- [2. Requirements and installation](#2-requirements-and-installation)
 - [3. Quick Start](#3-quick-start)
 - [4. Sub-commands](#4-sub-commands)
 - [5. Preparation before training](#5-preparation-before-training)
