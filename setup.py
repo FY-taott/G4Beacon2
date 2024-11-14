@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-# Update date: 2024/10/11
-# Author: Tao Tiantong, Zhang Zhuofan
+# Update date: 2024/11/14
+# Author: Tiantong Tao, Zhuofan Zhang
 import os
 import shutil
 import re
@@ -38,8 +38,8 @@ class sdist(_sdist):
 setup(
     name='G4beacon2',
     version=getVersion(),
-    author="Tao Tiantong, Zhang Rongxin, Shu Huiling, Ma Yuqing, Zhang Zhuofan, Tu Jing, Sun Xiao*",
-    author_email="taotiantong@163.com",
+    author="Tiantong Tao, Rongxin Zhang, Huiling Shu, Yuqing Ma, Zhuofan Zhang, Jing Tu, Xiao Sun*",
+    author_email="taott2k@seu.edu.cn",
     packages=find_packages(),
     package_data={"": ["models/*.joblib"]},
     scripts=['bin/g4beacon2'],
