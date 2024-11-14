@@ -65,7 +65,7 @@ G4Beacon2 provides a pre-trained default prediction model based on multi-level e
 A complete list of commands can be found in the help section.
 ```bash
 g4beacon2 --help
-        [g4beacon2] is an genome-wide cell specific validated G4(vG4) prediction tool.
+        [g4beacon2] is a genome-wide cell specific validated G4(vG4) prediction tool.
         g4beacon2 takes seq(embedded)+atac(zscored) feature inputs.
         This software can be used to construct the feature, train on your own data or
         predict genome-wide vG4s. We provide the following sub-commands:
