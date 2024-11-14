@@ -25,7 +25,7 @@ You can now find the pre-embedded data at [G4Beacon2PreEmbedding](https://huggin
 
 G-quadruplexes (G4) are prevalent non-B DNA structures playing crucial biological roles in cells. Although experimental technologies for G4 identification in vitro and in vivo are advancing, computational prediction methods are increasingly preferred for their efficiency, convenience, and cost-effectiveness. However, existing tools primarily perform in vitro G4 predictions that lack cell-specific information and are often non-genome-wide, with high-performance genome-wide in vivo G4 prediction models still lacking. We present G4Beacon2, a genome-wide cell-specific G4 prediction model based on multi-level ensemble learning. G4Beacon2 leveraged DNABERT2 to capture semantic information from DNA sequences and normalized chromatin accessibility data using z-scores and established a three-level ensemble framework to achieve accurate in vivo G4 predictions across the genome. Therefore, we demonstrated the model's robust performance in both intra-cell-line and cross-cell-line tests and validated its high generalizability in cross-species predictions. Moreover, the fusion model, integrating high-quality data from multiple species and cell lines, exhibited high stability and performance. In summary, G4Beacon2 presents a novel solution for genome-wide in vivo G4 prediction by integrating multi-species and cell line data, offering a user-friendly and advanced prediction tool for researchers.
 
-<img src="./pictures/figure1.png" alt="fig1" style="zoom:80%;" />
+<img src="./pictures/figure.png" alt="fig1" style="zoom:80%;" />
 
 
 ## 2. Requirements and installation
