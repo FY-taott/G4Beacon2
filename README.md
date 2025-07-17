@@ -13,7 +13,7 @@ This repository encompasses the main program for [G4Beacon2](https://github.com/
 - [7. Citation](#7-citation)
 
 
-##  <img src="./pictures/beacon.ico"/> Update (2025/2/25)
+##  <img src="./pictures/beacon.ico"/> Update (2025/7/17)
 
 Previously, we introduced the beta version of [G4Beacon](https://github.com/Bocabbage/G4Beacon). After maintenance and improvements, we are delighted to introduce G4Beacon2, a genome-wide, cell-specific G4 prediction method based on multi-level ensemble learning, DNABERT2 encoding, and z-score normalization.
 
