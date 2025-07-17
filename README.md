@@ -19,6 +19,8 @@ Previously, we introduced the beta version of [G4Beacon](https://github.com/Boca
 
 You can now find the pre-embedded data at [G4Beacon2PreEmbedding](https://huggingface.co/datasets/FY-taott/G4Beacon2PreEmbedding), which facilitates quick usage of the prediction tool.
 
+(*Researchers Only*) The relevant code from the development of G4Beacon2 is available in the [G4Beacon2-Dev](https://github.com/FY-taott/G4Beacon2-Dev/), which includes the core code for development, debugging, and testing. Regular users can disregard this page without any impact on usage.
+
 ## 1. Introduction
 
 G-quadruplexes (G4) are prevalent non-B DNA structures playing crucial biological roles in cells. Although experimental technologies for G4 identification in vitro and in vivo are advancing, computational prediction methods are increasingly preferred for their efficiency, convenience, and cost-effectiveness. However, existing tools primarily perform in vitro G4 predictions that lack cell-specific information and are often non-genome-wide, with high-performance genome-wide in vivo G4 prediction models still lacking. We present G4Beacon2, a genome-wide cell-specific G4 prediction model based on multi-level ensemble learning. G4Beacon2 leveraged DNABERT2 to capture semantic information from DNA sequences and normalized chromatin accessibility data using z-scores and established a three-level ensemble framework to achieve accurate in vivo G4 predictions across the genome. Therefore, we demonstrated the model's robust performance in both intra-cell-line and cross-cell-line tests and validated its high generalizability in cross-species predictions. Moreover, the fusion model, integrating high-quality data from multiple species and cell lines, exhibited high stability and performance. In summary, G4Beacon2 presents a novel solution for genome-wide in vivo G4 prediction by integrating multi-species and cell line data, offering a user-friendly and advanced prediction tool for researchers.
@@ -53,6 +55,16 @@ $ pip install -r requirements.txt
 If installation using git commands is unsuccessful, you can try downloading the code as a zip file, extract it locally, and then proceed with the installation.
 
 ## 3. Quick Start
+We have provided an end-to-end sub-software to assist researchers unfamiliar with embedding operations and z-score normalization in efficiently processing data. The program is available in the **G4Beacon2/sub_software** directory. Specific operations can be performed with a single line of code to achieve embedding and normalization separately.
+
+```
+# DNABERT2 embedding
+python3 DNABERT2.py [path/to/sequence.txt]
+
+# z-score normalization
+bash zscore.sh [path/to/ATAC_p_value.bigWig]
+```
+
 G4Beacon2 provides a pre-trained default prediction model based on multi-level ensemble learning. You can directly use this framework with the following code. In this section, you will need to prepare *sequence data* and *chromatin accessibility data* as inputs. 
 
 ```
