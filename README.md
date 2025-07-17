@@ -353,7 +353,7 @@ At this point, you will obtain the sequence file after embedding. This step may 
 Step 1: First, convert the ATAC-seq p-value bigwig file to wig format, then generate a bedGraph file (note that direct conversion of certain regions may cause merging).
 
 ```bash
-bigWigToWig ENCFF255WFR.bigWig HepG2_hg38.wig ####给data
+bigWigToWig ENCFF255WFR.bigWig HepG2_hg38.wig
 wig2bed < HepG2_hg38.wig > HepG2_hg38.bed
 cut -f 1,2,3,5- HepG2_hg38.bed > HepG2_hg38.bedGraph
 ```
