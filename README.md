@@ -110,7 +110,7 @@ for i in {00..04}; do
 
   cat HepG2onK562_ES${i}_plus.bed \
       HepG2onK562_ES${i}_minus.bed \
-      > HepG2onK562_ES{i}.bed
+      > HepG2onK562_ES${i}.bed
 done
 ```
 
@@ -125,7 +125,7 @@ paste HepG2onK562_ES00.bed \
       HepG2onK562_ES02.bed \
       HepG2onK562_ES03.bed \
       HepG2onK562_ES04.bed \
-      | awk '{sum=($4+$8+$12+$16+$20)/5; print $1"\t"$2"\t"$3"\t"sum"\t"$5}' \
+      | awk '{sum=($4+$8+$12+$16+$20)/5; print $1"\t"$2"\t"$3"\t"sum}' \
       > HepG2onK562_CellScore.bed
 ```
 
@@ -141,7 +141,7 @@ WT26para=4
 H9para=1
 
 paste H9onK562_CellScore.bed HepG2onK562_CellScore.bed WT26onK562_CellScore.bed | \
-    awk -v h9=$H9para -v hep=$HepG2para -v WT26=$WT26para -v \
+    awk -v h9=$H9para -v hep=$HepG2para -v WT26=$WT26para \
     '{power=exp((log($4)*h9 + log($8)*hep + log($12)*WT26)/(h9 + hep + WT26)); \
     print $1"\t"$2"\t"$3"\t"power"\t"$5}' \
     > $output_folder/FusionScore_K562.bed
@@ -149,7 +149,7 @@ paste H9onK562_CellScore.bed HepG2onK562_CellScore.bed WT26onK562_CellScore.bed 
 
 ## 4. Test data and sub-commands
 ### 4.1 Test Data
-We have provided raw data available for testing in **./G4Beacon/data** , which allows the users to test our prediction tool in a short amount of time.
+We have provided raw data available for testing in **./G4Beacon2/data** , which allows the users to test our prediction tool in a short amount of time.
 
 ```bash
 # The test code can be found in G4Beacon2/data/test.
@@ -221,7 +221,7 @@ bedtools slop -i G4seqsMG4_plus.bed \
               > G4seqsMG4_plus_slop50.bed
 ```
 
-Step4: Construct 'Gemonic Bins' based on 'the oG4 Dataset'. Besides, aG4s without oG4 data support were removed.
+Step4: Construct 'Genomic Bins' based on 'the oG4 Dataset'. Besides, aG4s without oG4 data support were removed.
 
 ```bash
 bedtools intersect -a hg19_nogap_noB_w2k.bed -b G4seqsMG4_plus_slop50.bed -v -wa > hg19_NOs_nonOG4_plus.bed
@@ -405,6 +405,7 @@ cut -f 1-3 ATAC_pval.bedGraph > ATAC_pval_cut.temp
 awk '{printf "%.6g\n", $2}' ATAC_pval_z_score_normalized.bedgraph > ATAC_pval_zscore.temp
 paste -d'\t' ATAC_pval_cut.temp ATAC_pval_zscore.temp > ATAC_pval_zscore.bedGraph
 bedGraphToBigWig ATAC_pval_zscore.bedGraph chrom.sizes ATAC_pval_zscore.bigwig
+# then CrossMap to hg19
 ```
 
 Step 4: Extract ATAC information.
