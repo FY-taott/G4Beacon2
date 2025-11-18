@@ -350,7 +350,7 @@ At this point, you will obtain the sequence file after embedding. This step may 
 
 ### 5.4 zscored ATAC extracting
 
-Step 1: First, convert the ATAC-seq p-value bigwig file to wig format, then generate a bedGraph file (note that direct conversion of certain regions may cause merging).
+Step 1: First, convert the ATAC-seq p-value bigWig file to wig format, then generate a bedGraph file (note that direct conversion of certain regions may cause merging).
 
 ```bash
 bigWigToWig ENCFF255WFR.bigWig HepG2_hg38.wig
@@ -400,7 +400,7 @@ with open(f"{output_prefix}_z_score_normalized.bedgraph", "w") as f:
         f.write(f"{data[i]}\t{value}\n")
 ```
 
-Step 3: Organize the files to obtain the final input bigwig file.
+Step 3: Organize the files to obtain the final input bigWig file.
 
 ```bash
 cut -f 1-3 ATAC_pval.bedGraph > ATAC_pval_cut.temp
